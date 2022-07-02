@@ -1,0 +1,25 @@
+.web-browser {
+    border-top: 3px rgba(239,239,239,255) solid;
+    border-left: 3px rgba(239,239,239,255) solid;
+    border-bottom: 3px rgba(1,1,0,255) solid;
+    border-right: 3px rgba(1,1,0,255) solid;
+}
+
+.top-bar {
+    background-color: rgba(2,1,126,255);
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.browser-body{
+    padding: 3px;
+    background-color: rgba(192,193,193,255);
+}
+
+.close-btn {
+    background-color: rgba(192,193,193,255);
+    border-top: 3px rgba(236,236,237,255) solid;
+    border-left: 3px rgba(236,236,237,255) solid;
+    border-bottom: 3px rgba(65,64,65,255) solid;
+    border-right: 3px rgba(65,64,65,255) solid;
+}

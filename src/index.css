@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "win98";
+  src: local("win98"),
+    url("./fonts/win98.ttf") format("truetype");
+  font-weight: normal;
+}
+body {
+  margin: 0;
+  font-family: 'win98';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url('./imgs/bliss.jpg');
+  background-repeat: no-repeat;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
