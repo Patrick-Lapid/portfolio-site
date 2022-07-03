@@ -11,6 +11,10 @@
     padding-left: 0;
 }
 
+.top-section {
+    border: rgba(128,128,136,255) 2px solid;
+}
+
 .browser-body{
     padding: 3px;
     background-color: rgba(192,193,193,255);
