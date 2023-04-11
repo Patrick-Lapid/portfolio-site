@@ -42,7 +42,7 @@ function App() {
                                 </div>
                             </a>
                             <a
-                                href="https://www.instagram.com/patrickk.ml/"
+                                href="https://www.youtube.com/channel/UCr350j-4YOjQPIphYWrcbQQ/"
                                 target="_blank"
                                 rel="noreferrer"
                             >
@@ -99,9 +99,6 @@ function App() {
                         </div>
                     </div>
                 )}
-            </div>
-
-            <div className="taskbar">
                 <TaskBar />
             </div>
         </div>

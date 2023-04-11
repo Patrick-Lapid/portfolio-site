@@ -23,7 +23,7 @@ export function useNavigateContext() {
 
 const NavigationProvider = ({children} : any) => {
 
-    const [activeWindows, updateActiveWindows] = useState<string[]>([LINKS.BIOGRAPHY, LINKS.PHOTOS, LINKS.RESUME]);
+    const [activeWindows, updateActiveWindows] = useState<string[]>([LINKS.BIOGRAPHY, LINKS.PHOTOS, LINKS.RESUME, "Microsoft Paint"]);
     const [focusedWindow, setFocusedWindow] = useState<string>(LINKS.BIOGRAPHY);
 
     const value : NavigateContextInterface = {
