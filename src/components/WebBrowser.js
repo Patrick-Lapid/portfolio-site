@@ -8,26 +8,19 @@ const WebBrowser = () => {
     return (
         <>
             <div className="frame">
-                {/* Main Container */}
+                {/* Draggable Window */}
                 <div className="window">
                     <div className="inner">
-                        {/* Top Bar */}
+                        {/* Draggable Header */}
                         <div className="header d-flex flex-row align-content-center justify-content-between">
                             Biography
-                            {/* <img
-                                className="ie-icon my-1 mx-1"
-                                src={ie}
-                                alt="ie-icon"
-                                height="30"
-                            /> */}
-                            {/* <img
-                                className="close-btn my-1 mx-1"
-                                src={close}
-                                alt="close-icon"
-                                height="30"
-                            /> */}
+                            <div className="header-buttons">
+                                <button></button>
+                                <button></button>
+                                <button></button>
+                            </div>
                         </div>
-                        {/* Navbar */}
+                        {/* AddressBar */}
                         <div className="top-section">
                             <AddressBar />
                         </div>
