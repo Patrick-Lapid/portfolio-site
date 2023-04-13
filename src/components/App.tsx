@@ -1,12 +1,13 @@
 import WebBrowser from "./WebBrowser";
 import TaskBar from "./TaskBar";
-import { useNavigateContext, LINKS } from "../context/navigate.tsx";
+import { useNavigateContext, LINKS } from "../context/navigate";
 import sidebar from "../imgs/sidebar-image.png";
 import linkedin from "../imgs/Linkedin.webp";
 import instagram from "../imgs/Instagram.webp";
 import github from "../imgs/Github.webp";
 import resume from "../imgs/resume.png";
 import youtube from "../imgs/youtube.webp";
+import React from "react";
 
 function App() {
     const { focusedWindow } = useNavigateContext();
@@ -16,15 +17,15 @@ function App() {
             <div className="desktop">
                 <WebBrowser />
                 {focusedWindow === LINKS.START && (
-                    <div class="menu" style={{ zIndex: "1000000" }}>
-                        <div class="sidebar">
+                    <div className="menu" style={{ zIndex: "1000000" }}>
+                        <div className="sidebar">
                             <img
-                                class="sidebar-image"
+                                className="sidebar-image"
                                 src={sidebar}
                                 alt="sideBar"
                             />
                         </div>
-                        <div class="socials">
+                        <div className="socials">
                             <a
                                 href="https://www.instagram.com/patrickk.ml/"
                                 target="_blank"
@@ -36,7 +37,7 @@ function App() {
                                         src={instagram}
                                         alt="instagram"
                                     />
-                                    <div class="social-text">
+                                    <div className="social-text">
                                         <u>I</u>nstagram
                                     </div>
                                 </div>
@@ -52,7 +53,7 @@ function App() {
                                         src={youtube}
                                         alt="youtube"
                                     />
-                                    <div class="social-text">
+                                    <div className="social-text">
                                         <u>Y</u>outube
                                     </div>
                                 </div>

@@ -4,6 +4,7 @@ import refreshBtn from "../imgs/refresh.png";
 import homeBtn from "../imgs/home.png";
 import stopBtn from "../imgs/stop.png";
 import forwardBtn from "../imgs/forward.png";
+import React from "react";
 
 const NavBar = () => {
     return (

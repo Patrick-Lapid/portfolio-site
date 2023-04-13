@@ -1,8 +1,6 @@
 import "./WebBrowser.css";
-import AddressBar from "./AddressBar";
-import close from "../imgs/close.png";
-import ie from "../imgs/ie.png";
 import profilePic from "../imgs/profile_picture.png";
+import React from "react";
 
 const WebBrowser = () => {
     return (
@@ -12,7 +10,10 @@ const WebBrowser = () => {
                 <div className="window">
                     <div className="inner">
                         {/* Draggable Header */}
-                        <div className="header d-flex flex-row align-content-center justify-content-between">
+                        <div
+                            className="header d-flex flex-row align-content-center justify-content-between"
+                            draggable
+                        >
                             Biography
                             <div className="header-buttons">
                                 <button></button>
@@ -20,10 +21,19 @@ const WebBrowser = () => {
                                 <button></button>
                             </div>
                         </div>
+
                         {/* AddressBar */}
-                        <div className="top-section">
-                            <AddressBar />
+                        <div className="top-section d-flex flex-row align-content-center">
+                            <div className="address-text mx-1 my-auto">
+                                Address
+                            </div>
+                            <div className="address-wrapper flex-grow-1">
+                                <div className="address-bar px-2">
+                                    localhost:8000/api
+                                </div>
+                            </div>
                         </div>
+
                         <div className="content row">
                             <div className="profile-col col-2">
                                 <div className="profile-card d-flex flex-column align-items-center">

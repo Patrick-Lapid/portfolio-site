@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./TaskBar.css";
-import { useNavigateContext } from "../context/navigate.tsx";
+import { useNavigateContext } from "../context/navigate";
 import start from "../imgs/win95.png";
-import { LINKS } from "../context/navigate.tsx";
+import startupSound from "../imgs/startup.mp3";
+import { LINKS } from "../context/navigate";
 
 const TaskBar = () => {
     const { activeWindows, focusedWindow, setFocusedWindow } =
         useNavigateContext();
-    const [clockState, setClockState] = useState();
+    const [clockState, setClockState] = useState<any>();
+    const audio = new Audio(startupSound)
 
     useEffect(() => {
         setInterval(() => {
@@ -15,6 +17,14 @@ const TaskBar = () => {
             setClockState(date.toLocaleTimeString());
         }, 1000);
     }, []);
+
+    const startup = () => {
+        console.log(audio.currentTime);
+        if(!audio.currentTime){
+            audio.play();
+        }
+        
+    }
 
     return (
         <>
@@ -27,6 +37,7 @@ const TaskBar = () => {
                     }`}
                     onClick={() => {
                         setFocusedWindow(LINKS.START);
+                        startup();
                     }}
                 >
                     <img src={start} className="start-icon" alt="startIcon" />

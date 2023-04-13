@@ -15,12 +15,12 @@
     position: relative;
     left: 36px;
     top: 18.188px;
-    width: 450px;
+    width: 850px;
     border-top: 1px rgba(239,239,239,255) solid;
     border-left: 1px rgba(239,239,239,255) solid;
     border-bottom: 1px rgba(1,1,0,255) solid;
     border-right: 1px rgba(1,1,0,255) solid;
-    background: rgb(192, 192, 192);
+    background: rgb(200,196,196);
 
     border-left-color: gray;
     border-top-color: gray;
@@ -66,8 +66,54 @@
     border-top-color: #fff;
 }
 
+.header-buttons > button:active {
+    
+    border: 1px solid black;
+
+    /* box-shadow: inset 0 0 0 1px gray; */
+
+    box-shadow: inset -1px 0 #dfdfdf, inset -1px 1px gray, inset -1px -1px #dfdfdf, inset 0 0 0 1px gray;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+}
+
+
+.address-wrapper{
+    border-bottom: rgba(187,195,196,255) 2px solid;
+    border-right: rgba(187,195,196,255) 2px solid;
+    border-top: rgba(128,128,136,255) 2px solid;
+    border-left: rgba(128,128,136,255) 2px solid;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.address-bar{
+    border-top: rgba(12,13,13,255) 2px solid;
+    border-left: rgba(12,13,13,255) 2px solid;
+    border-bottom: rgba(187,195,196,255) 2px solid;
+    border-right: rgba(187,195,196,255) 2px solid;
+    background-color: rgba(254,255,254,255);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    padding-top: 2px;
+    min-width: 150px;
+}
+
+.address-text {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+
 .top-section {
-    border: rgba(128,128,136,255) 2px solid;
+    border: rgba(128,128,128,255) 1px solid;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    box-shadow: inset -1px 0 gray, inset -1px 1px black, inset -1px -1px gray, inset 0 0 0 1px black;
+    margin: 1px;
+    padding: 2px;
 }
 
 .browser-body{
@@ -76,7 +122,7 @@
 }
 
 .close-btn {
-    background-color: rgba(192,193,193,255);
+    background-color: rgb(200,196,196);
     border-top: 3px rgba(236,236,237,255) solid;
     border-left: 3px rgba(236,236,237,255) solid;
     border-bottom: 3px rgba(65,64,65,255) solid;
@@ -85,11 +131,16 @@
 }
 
 .content{
-    margin: 0;
-    
-    background-color: white;
+    margin: 1px;
+    padding: 2px;
+    border: rgba(128,128,128,255) 1px solid;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    box-shadow: inset -1px 0 gray, inset -1px 1px black, inset -1px -1px gray, inset 0 0 0 1px black;
+    background: white;
     overflow: scroll;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .profile-col{

@@ -4,9 +4,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./fonts/win98.ttf";
 import "./index.css";
 import NavigationProvider from "./context/navigate.tsx";
-import App from "./components/App";
+import App from "./components/App.tsx";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const rootElement = document.getElementById("root");
+if (!rootElement) throw new Error("Failed to find the root element");
+const root = ReactDOM.createRoot(rootElement);
+
 root.render(
     <React.StrictMode>
         <NavigationProvider>
