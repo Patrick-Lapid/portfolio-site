@@ -1,1 +1,1 @@
-Portfolio Site hosted by Netlify
+Windows 95 Inspired Portfolio Site
