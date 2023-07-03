@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./TaskBar.css";
-import { useNavigateContext } from "../context/navigate";
+import { useProcessContext } from "../context/process";
 import start from "../imgs/win95.png";
 import startupSound from "../imgs/startup.mp3";
-import { LINKS } from "../context/navigate";
+import { LINKS } from "../context/process";
 
 const TaskBar = () => {
-    const { activeWindows, focusedWindow, setFocusedWindow } =
-        useNavigateContext();
+    const { processMap, focusedWindow, setFocusedWindow } =
+        useProcessContext();
     const [clockState, setClockState] = useState<any>();
     const audio = new Audio(startupSound)
 
@@ -23,8 +23,14 @@ const TaskBar = () => {
         if(!audio.currentTime){
             audio.play();
         }
-        
     }
+
+    useEffect(() => {
+        // console.log(processMap)
+        Object.keys(processMap).map((key : string) =>  console.log(key, processMap.get(key)));
+    }, [])
+
+    
 
     return (
         <>
@@ -43,20 +49,21 @@ const TaskBar = () => {
                     <img src={start} className="start-icon" alt="startIcon" />
                     <div className="start-text">Start</div>
                 </div>
-                {activeWindows.map((window) => {
+
+                {[...processMap].map(([key, process]) => {
                     return (
                         <button
-                            id={window}
+                            id={key}
                             className={`navbar-item ${
-                                focusedWindow === window
+                                focusedWindow === process.name
                                     ? "navbar-item-depressed"
                                     : ""
                             }`}
                             onClick={() => {
-                                setFocusedWindow(window);
+                                setFocusedWindow(process.name);
                             }}
                         >
-                            {window}
+                            {process.name}
                         </button>
                     );
                 })}
