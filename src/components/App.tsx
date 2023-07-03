@@ -5,13 +5,18 @@ import { useProcessContext, LINKS } from "../context/process";
 import { StartMenu } from "./StartMenu";
 
 function App() {
-    const { focusedWindow } = useProcessContext();
+    const { focusedWindow, processMap } = useProcessContext();
 
     return (
         <div className="body">
             <div className="desktop">
+
+                {[...processMap].map(([key, process]) => {
+                    return (
+                        <WebBrowser id={key} key={key} />
+                    );
+                })}
                 
-                <WebBrowser />
 
                 {focusedWindow === LINKS.START && <StartMenu />}
                 <TaskBar />

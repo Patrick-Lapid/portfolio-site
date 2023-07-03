@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 
 export const LINKS = {
     START     : "Start",
@@ -17,7 +17,7 @@ export interface process {
 type ProcessContextInterface = {
     processMap : Map<string, any>;
     focusedWindow : string;
-    setFocusedWindow : React.Dispatch<React.SetStateAction<string>>;
+    setFocusedWindow : any;
 }
 
 const defaultMap = new Map<string, process>([
@@ -40,10 +40,16 @@ const NavigationProvider = ({children} : any) => {
     const [processMap, updateProcessMap] = useState<Map<string, process>>(defaultMap); // eslint-disable-line no-unused-vars
     const [focusedWindow, setFocusedWindow] = useState<string>(LINKS.BIOGRAPHY);
 
+    const updateActiveWindow = useCallback(
+        (id : string) => {
+            setFocusedWindow(id)
+        }, []
+    )
+
     const value : ProcessContextInterface = {
         processMap : processMap,
         focusedWindow : focusedWindow,
-        setFocusedWindow : setFocusedWindow
+        setFocusedWindow : updateActiveWindow
     }
 
     return(

@@ -2,9 +2,15 @@ import React from "react";
 import "../styles/WebBrowser.css";
 import profilePic from "../imgs/profile_picture.png";
 import { Rnd } from "react-rnd";
+import { useProcessContext } from "../context/process";
 
+interface WindowProps {
+    id : string
+}
 
-const WebBrowser = () => {
+const Window = (props : WindowProps) => {
+
+    const {processMap} = useProcessContext();
 
     return (
         <>
@@ -12,7 +18,7 @@ const WebBrowser = () => {
             size={{ width: 850, height: 600 }}
             minHeight={600}
             minWidth={850}
-            position={{ x: 200, y: 200 }}
+            position={{ x: Math.floor((Math.random() * 500) + 1), y: Math.floor((Math.random() * 200) + 1)}}
             dragHandleClassName="header"
             cancel=".header-buttons"
             style={{overflow: "hidden"}}
@@ -25,7 +31,7 @@ const WebBrowser = () => {
                         <div
                             className="header d-flex flex-row align-content-center justify-content-between"
                         >
-                            Biography
+                            {processMap.get(props.id).name}
                             <div className="header-buttons">
                                 <button></button>
                                 <button></button>
@@ -40,7 +46,7 @@ const WebBrowser = () => {
                             </div>
                             <div className="address-wrapper flex-grow-1">
                                 <div className="address-bar px-2">
-                                    localhost:8000/api
+                                    localhost:8000/{props.id}
                                 </div>
                             </div>
                         </div>
@@ -83,4 +89,4 @@ const WebBrowser = () => {
     );
 };
 
-export default WebBrowser;
+export default Window;

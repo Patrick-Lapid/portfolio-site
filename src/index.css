@@ -6,7 +6,7 @@
 }
 *{
   cursor: url('./imgs/curson.png'), auto;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .body {
