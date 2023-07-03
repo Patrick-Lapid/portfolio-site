@@ -12,8 +12,8 @@ const WebBrowser = () => {
         <>
             <Rnd
             size={{ width: 850, height: 600 }}
-            // minHeight={600}
-            // minWidth={850}
+            minHeight={600}
+            minWidth={850}
             position={{ x: 200, y: 200 }}
             dragHandleClassName="header"
             cancel=".header-buttons"
