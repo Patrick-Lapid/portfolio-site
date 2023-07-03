@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./TaskBar.css";
+import "../styles/TaskBar.css";
 import { useProcessContext } from "../context/process";
 import start from "../imgs/win95.png";
 import startupSound from "../imgs/startup.mp3";

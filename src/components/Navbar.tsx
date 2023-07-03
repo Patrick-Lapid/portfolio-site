@@ -1,4 +1,4 @@
-import "./NavBar.css";
+import "..styles/Navbar.css";
 import backBtn from "../imgs/back.png";
 import refreshBtn from "../imgs/refresh.png";
 import homeBtn from "../imgs/home.png";
@@ -9,7 +9,7 @@ import React from "react";
 const NavBar = () => {
     return (
         <div className="nav-bar d-flex flex-row align-content-center justify-content-start py-1">
-            <div className="icon text-center ms-1">
+            <div className="    icon text-center ms-1">
                 <div className="icon-img">
                     <img src={backBtn} className="" alt="backBtn" height="15" />
                 </div>

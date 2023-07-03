@@ -1,5 +1,5 @@
 import React from "react";
-import "./WebBrowser.css";
+import "../styles/WebBrowser.css";
 import profilePic from "../imgs/profile_picture.png";
 import { Rnd } from "react-rnd";
 
