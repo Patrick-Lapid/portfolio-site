@@ -1,28 +1,29 @@
-import { useCallback, useRef } from "react"
+import { useCallback, useRef } from "react";
 
 type doubleClick = (
     handler: React.MouseEventHandler,
-    timeout?: number
-) => React.MouseEventHandler
+    timeout?: number,
+) => React.MouseEventHandler;
 
-const useDoubleClick : doubleClick = (handler, timeout = 500) => {
-
-    const timer = useRef<NodeJS.Timeout | null>(null)
+const useDoubleClick: doubleClick = (handler, timeout = 500) => {
+    const timer = useRef<NodeJS.Timeout | null>(null);
 
     const onClick = useCallback<React.MouseEventHandler>(
-        (event) => {
-            if(!timer.current) {
+        event => {
+            if (!timer.current) {
                 timer.current = setTimeout(() => {
-                    timer.current = null
-                }, timeout)
+                    timer.current = null;
+                }, timeout);
             } else {
-                clearTimeout(timer.current)
-                handler(event)
-                timer.current = null
+                clearTimeout(timer.current);
+                handler(event);
+                timer.current = null;
             }
-        }, [handler, timeout])
+        },
+        [handler, timeout],
+    );
 
-    return onClick
-}
+    return onClick;
+};
 
 export default useDoubleClick;

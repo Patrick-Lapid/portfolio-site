@@ -9,17 +9,32 @@ import Biography from "../../components/processes/Biography";
 //     ["paint", {name : LINKS.PAINT, minimized: false, maximized: false}],
 // ])
 
-export const processDirectory : Processes = {
-    Biography : {
-        Component : ({id, name}) => <Biography id={id} name={name}/>,
-        name : LINKS.BIOGRAPHY
+export const processDirectory: Processes = {
+    Biography: {
+        Component: ({ id, name }) => (
+            <Biography
+                id={id}
+                name={name}
+            />
+        ),
+        name: LINKS.BIOGRAPHY,
     },
-    MSPaint : {
-        Component : ({id, name}) => <Biography id={id} name={name}/>,
-        name : LINKS.PAINT
+    MSPaint: {
+        Component: ({ id, name }) => (
+            <Biography
+                id={id}
+                name={name}
+            />
+        ),
+        name: LINKS.PAINT,
     },
-    Photo : {
-        Component : ({id, name}) => <Biography id={id} name={name}/>,
-        name : LINKS.PHOTOS
-    }
-}
+    Photo: {
+        Component: ({ id, name }) => (
+            <Biography
+                id={id}
+                name={name}
+            />
+        ),
+        name: LINKS.PHOTOS,
+    },
+};

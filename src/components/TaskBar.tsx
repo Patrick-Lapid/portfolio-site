@@ -6,10 +6,9 @@ import startupSound from "../imgs/startup.mp3";
 import { LINKS } from "../context/types";
 
 const TaskBar = () => {
-    const { processes, focusedWindow, setFocusedWindow } =
-        useProcessContext();
+    const { processes, focusedWindow, setFocusedWindow } = useProcessContext();
     const [clockState, setClockState] = useState<any>();
-    const audio = new Audio(startupSound)
+    const audio = new Audio(startupSound);
 
     useEffect(() => {
         setInterval(() => {
@@ -19,17 +18,15 @@ const TaskBar = () => {
     }, []);
 
     const startup = () => {
-        if(!audio.currentTime){
+        if (!audio.currentTime) {
             audio.play();
         }
-    }
+    };
 
     useEffect(() => {
         // console.log(processMap)
-        Object.keys(processes).map((key : string) =>  console.log(key));
-    }, [processes])
-
-    
+        Object.keys(processes).map((key: string) => console.log(key));
+    }, [processes]);
 
     return (
         <>
@@ -45,11 +42,15 @@ const TaskBar = () => {
                         startup();
                     }}
                 >
-                    <img src={start} className="start-icon" alt="startIcon" />
+                    <img
+                        src={start}
+                        className="start-icon"
+                        alt="startIcon"
+                    />
                     <div className="start-text">Start</div>
                 </div>
 
-                {Object.entries(processes).map(([key, {name}]) => {
+                {Object.entries(processes).map(([key, { name }]) => {
                     return (
                         <button
                             key={key}

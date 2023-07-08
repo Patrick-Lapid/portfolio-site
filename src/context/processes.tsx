@@ -2,12 +2,11 @@ import React, { useCallback, useContext, useState } from "react";
 import { processDirectory } from "./utils/processDirectory";
 import { LINKS, Processes } from "./types";
 
-
 type ProcessContextInterface = {
-    processes : Processes;
-    focusedWindow : string;
-    setFocusedWindow : any;
-}
+    processes: Processes;
+    focusedWindow: string;
+    setFocusedWindow: any;
+};
 
 // const defaultMap = new Map<string, process>([
 //     ["biography", {name : LINKS.BIOGRAPHY, minimized: false, maximized: false}],
@@ -17,34 +16,33 @@ type ProcessContextInterface = {
 // ])
 
 type ProcessContextType = ProcessContextInterface;
-const ProcessContext = React.createContext<ProcessContextType>({} as ProcessContextInterface);
+const ProcessContext = React.createContext<ProcessContextType>(
+    {} as ProcessContextInterface,
+);
 
 export function useProcessContext() {
     return useContext(ProcessContext);
 }
 
-const ProcessContextProvider = ({children} : any) => {
-
-    const [processes] = useState<Processes>(processDirectory); 
+const ProcessContextProvider = ({ children }: any) => {
+    const [processes] = useState<Processes>(processDirectory);
     const [focusedWindow, setFocusedWindow] = useState<string>(LINKS.BIOGRAPHY);
 
-    const updateActiveWindow = useCallback(
-        (id : string) => {
-            setFocusedWindow(id)
-        }, []
-    )
+    const updateActiveWindow = useCallback((id: string) => {
+        setFocusedWindow(id);
+    }, []);
 
-    const value : ProcessContextInterface = {
-        processes : processes,
-        focusedWindow : focusedWindow,
-        setFocusedWindow : updateActiveWindow
-    }
+    const value: ProcessContextInterface = {
+        processes: processes,
+        focusedWindow: focusedWindow,
+        setFocusedWindow: updateActiveWindow,
+    };
 
-    return(
+    return (
         <ProcessContext.Provider value={value}>
             {children}
         </ProcessContext.Provider>
-    )
-}
+    );
+};
 
 export default ProcessContextProvider;

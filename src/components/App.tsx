@@ -11,10 +11,8 @@ function App() {
     return (
         <div className="body">
             <div className="desktop">
-
                 {/* Window Renderer */}
                 <WindowManager />
-                
 
                 {focusedWindow === LINKS.START && <StartMenu />}
                 <TaskBar />

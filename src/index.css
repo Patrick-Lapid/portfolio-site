@@ -1,38 +1,39 @@
 @font-face {
-  font-family: "win98";
-  src: local("win98"),
-    url("./fonts/win98.ttf") format("truetype");
-  font-weight: normal;
+    font-family: "win98";
+    src:
+        local("win98"),
+        url("./fonts/win98.ttf") format("truetype");
+    font-weight: normal;
 }
-*{
-  cursor: url('./imgs/curson.png'), auto;
-  overflow: hidden;
+* {
+    cursor: url("./imgs/curson.png"), auto;
+    overflow: hidden;
 }
 
 .body {
     height: 100%;
     width: 100%;
-    background-image: url('./imgs/bliss.jpg');
+    background-image: url("./imgs/bliss.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
-  /* margin:0;
+    /* margin:0;
   padding:0;
   height: 100vh;
   width: 100vw; */
-  font-family: 'win98';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: "win98";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .desktop {
     width: 100%;
-    height: 100vh; 
+    height: 100vh;
     background-repeat: no-repeat;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }

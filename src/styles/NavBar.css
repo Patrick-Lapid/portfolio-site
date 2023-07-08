@@ -1,24 +1,24 @@
-.nav-bar{
-    border-bottom: rgba(128,128,136,255) 2px solid;
-    border-top: rgba(254,255,254,255) 2px solid;
-    border-left: rgba(254,255,254,255) 2px solid;
+.nav-bar {
+    border-bottom: rgba(128, 128, 136, 255) 2px solid;
+    border-top: rgba(254, 255, 254, 255) 2px solid;
+    border-left: rgba(254, 255, 254, 255) 2px solid;
 }
 
-.icon{
-   width: 68px;
-   height: 58px;
-   min-width: 68px;
+.icon {
+    width: 68px;
+    height: 58px;
+    min-width: 68px;
 }
 
-.icon:hover{
-    filter:none;
-    border-top: 1.5px rgba(236,236,237,255) solid;
-    border-left: 1.5px rgba(236,236,237,255) solid;
-    border-bottom: 1.5px rgba(65,64,65,255) solid;
-    border-right: 1.5px rgba(65,64,65,255) solid;
+.icon:hover {
+    filter: none;
+    border-top: 1.5px rgba(236, 236, 237, 255) solid;
+    border-left: 1.5px rgba(236, 236, 237, 255) solid;
+    border-bottom: 1.5px rgba(65, 64, 65, 255) solid;
+    border-right: 1.5px rgba(65, 64, 65, 255) solid;
 }
 
-.icon-img{
+.icon-img {
     flex-grow: 1;
     width: 100%;
     height: 30px;
@@ -36,17 +36,14 @@
     margin: 0 auto;
 }
 
-
-.icon:hover img{
+.icon:hover img {
     filter: none;
 }
 
-
-
-.icon-text{
+.icon-text {
     display: block;
     font-size: 18px;
     margin-top: 0 auto;
-    padding:0;
+    padding: 0;
     color: black;
 }

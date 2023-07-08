@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { useProcessContext } from '../context/processes';
+import * as React from "react";
+import { useProcessContext } from "../context/processes";
 import sidebar from "../imgs/sidebar-image.png";
 import linkedin from "../imgs/Linkedin.webp";
 import instagram from "../imgs/Instagram.webp";
@@ -7,13 +7,14 @@ import github from "../imgs/Github.webp";
 import resume from "../imgs/resume.png";
 import youtube from "../imgs/youtube.webp";
 
-export interface IStartMenuProps {
-}
+export interface IStartMenuProps {}
 
-export function StartMenu (props: IStartMenuProps) {
-
+export function StartMenu(props: IStartMenuProps) {
     return (
-        <div className="menu" style={{ zIndex: "300000" }}>
+        <div
+            className="menu"
+            style={{ zIndex: "300000" }}
+        >
             <div className="sidebar">
                 <img
                     className="sidebar-image"
@@ -83,7 +84,10 @@ export function StartMenu (props: IStartMenuProps) {
                     </div>
                 </a>
                 <div className="divider"></div>
-                <a href="/files/resume.pdf" target="_blank">
+                <a
+                    href="/files/resume.pdf"
+                    target="_blank"
+                >
                     <div className="bar">
                         <img
                             className="social-image"

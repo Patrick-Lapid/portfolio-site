@@ -11,7 +11,12 @@ const NavBar = () => {
         <div className="nav-bar d-flex flex-row align-content-center justify-content-start py-1">
             <div className="    icon text-center ms-1">
                 <div className="icon-img">
-                    <img src={backBtn} className="" alt="backBtn" height="15" />
+                    <img
+                        src={backBtn}
+                        className=""
+                        alt="backBtn"
+                        height="15"
+                    />
                 </div>
                 <div className="icon-text">Back</div>
             </div>
@@ -30,20 +35,32 @@ const NavBar = () => {
 
             <div className="icon  text-center me-1">
                 <div className="icon-img">
-                    <img src={stopBtn} alt="refreshBtn" height="28.5" />
+                    <img
+                        src={stopBtn}
+                        alt="refreshBtn"
+                        height="28.5"
+                    />
                 </div>
                 <div className="icon-text">Stop</div>
             </div>
 
             <div className="icon text-center me-1">
                 <div className="icon-img">
-                    <img src={refreshBtn} alt="refreshBtn" height="28.5" />
+                    <img
+                        src={refreshBtn}
+                        alt="refreshBtn"
+                        height="28.5"
+                    />
                 </div>
                 <div className="icon-text">Refresh</div>
             </div>
             <div className="icon text-center ">
                 <div className="icon-img">
-                    <img src={homeBtn} alt="refreshBtn" height="28.5" />
+                    <img
+                        src={homeBtn}
+                        alt="refreshBtn"
+                        height="28.5"
+                    />
                 </div>
                 <div className="icon-text">Home</div>
             </div>
