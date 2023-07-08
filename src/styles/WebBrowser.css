@@ -27,10 +27,7 @@
     box-shadow: inset -1px 0 gray, inset -1px 1px #fff, inset -1px -1px gray, inset 0 0 0 1px #fff;;
 }
 
-.inner {
-    position: relative;
-    padding: 3px;
-}
+
 
 .header {
     
@@ -106,7 +103,6 @@
     font-weight: 600;
 }
 
-
 .top-section {
     border: rgba(128,128,128,255) 1px solid;
     border-right-color: #fff;
@@ -130,12 +126,21 @@
     cursor: pointer;
 }
 
+.inner {
+    position: relative;
+    height: 99%;
+    padding: 3px;
+    
+}
+
 .content{
+    position: relative;
     margin: 1px;
     padding: 2px;
+    height: 100%;
     border: rgba(128,128,128,255) 1px solid;
     border-right-color: #fff;
-    border-bottom-color: #fff;
+    border-bottom: solid 1px gray;
     box-shadow: inset -1px 0 gray, inset -1px 1px black, inset -1px -1px gray, inset 0 0 0 1px black;
     background: white;
     overflow: scroll;

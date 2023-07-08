@@ -53,7 +53,7 @@ const TaskBar = () => {
                 {[...processMap].map(([key, process]) => {
                     return (
                         <button
-                            id={key}
+                            key={key}
                             className={`navbar-item ${
                                 focusedWindow === process.name
                                     ? "navbar-item-depressed"
