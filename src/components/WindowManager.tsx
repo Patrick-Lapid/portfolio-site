@@ -1,9 +1,19 @@
 import React from 'react'
+import { useProcessContext } from '../context/processes'
 
-type Props = {}
+const WindowManager = () => {
 
-const WindowManager = (props: Props) => {
+    const {processes} = useProcessContext()
+
     return (
-        <div>WindowManager</div>
-    )
+        <>
+            {Object.entries(processes).map(([id, { Component, name }]) => {
+                return (
+                    <Component id={id} name={name} />
+                );
+            })}
+        </>
+    );
 }
+
+export default WindowManager;

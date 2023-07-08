@@ -5,6 +5,7 @@ import { useProcessContext } from "../context/processes";
 
 interface WindowProps {
     id : string,
+    name : string,
     children : ReactNode
 }
 
@@ -31,7 +32,8 @@ const Window = (props : WindowProps) => {
                         <div
                             className="header d-flex flex-row align-content-center justify-content-between"
                         >
-                            {/* {processes.get(props.id).name} */}
+                            Biography
+                            {/* {props.name} */}
                             <div className="header-buttons">
                                 <button></button>
                                 <button></button>
