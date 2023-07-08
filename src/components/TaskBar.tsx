@@ -24,7 +24,6 @@ const TaskBar = () => {
     };
 
     useEffect(() => {
-        // console.log(processMap)
         Object.keys(processes).map((key: string) => console.log(key));
     }, [processes]);
 

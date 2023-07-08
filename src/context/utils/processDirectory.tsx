@@ -1,6 +1,9 @@
 import React from "react";
 import { LINKS, Processes } from "../types";
 import Biography from "../../components/processes/Biography";
+import MSPaint from "../../components/processes/MSPaint";
+import Photos from "../../components/processes/Photos";
+import Resume from "../../components/processes/Resume";
 
 // const defaultMap = new Map<string, process>([
 //     ["biography", {name : LINKS.BIOGRAPHY, minimized: false, maximized: false}],
@@ -21,7 +24,7 @@ export const processDirectory: Processes = {
     },
     MSPaint: {
         Component: ({ id, name }) => (
-            <Biography
+            <MSPaint
                 id={id}
                 name={name}
             />
@@ -30,11 +33,20 @@ export const processDirectory: Processes = {
     },
     Photo: {
         Component: ({ id, name }) => (
-            <Biography
+            <Photos
                 id={id}
                 name={name}
             />
         ),
         name: LINKS.PHOTOS,
+    },
+    Resume: {
+        Component: ({ id, name }) => (
+            <Resume
+                id={id}
+                name={name}
+            />
+        ),
+        name: LINKS.RESUME,
     },
 };
