@@ -23,9 +23,9 @@ export function useProcessContext() {
     return useContext(ProcessContext);
 }
 
-const NavigationProvider = ({children} : any) => {
+const ProcessContextProvider = ({children} : any) => {
 
-    const [processMap] = useState<Processes>(processDirectory); 
+    const [processes] = useState<Processes>(processDirectory); 
     const [focusedWindow, setFocusedWindow] = useState<string>(LINKS.BIOGRAPHY);
 
     const updateActiveWindow = useCallback(
@@ -35,7 +35,7 @@ const NavigationProvider = ({children} : any) => {
     )
 
     const value : ProcessContextInterface = {
-        processes : processMap,
+        processes : processes,
         focusedWindow : focusedWindow,
         setFocusedWindow : updateActiveWindow
     }
@@ -47,4 +47,4 @@ const NavigationProvider = ({children} : any) => {
     )
 }
 
-export default NavigationProvider;
+export default ProcessContextProvider;

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./fonts/win98.ttf";
 import "./index.css";
-import NavigationProvider from "./context/processes";
+import ProcessContextProvider from "./context/processes";
 import App from "./components/App.tsx";
 
 const rootElement = document.getElementById("root");
@@ -12,8 +12,8 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
     <React.StrictMode>
-        <NavigationProvider>
+        <ProcessContextProvider>
             <App />
-        </NavigationProvider>
+        </ProcessContextProvider>
     </React.StrictMode>
 );

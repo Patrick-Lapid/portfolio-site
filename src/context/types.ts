@@ -1,10 +1,15 @@
 import { ComponentType } from "react";
 
-export type Process = {
-    Component: ComponentType<any>;
+export type ComponentProcessProps = {
+    id: string;
     name : string;
 };
 
+export type Process = {
+    Component: ComponentType<ComponentProcessProps>;
+    name : string;
+};
+    
 export type Processes = {
     [id : string] : Process
 };

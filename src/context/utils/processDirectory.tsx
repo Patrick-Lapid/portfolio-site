@@ -1,5 +1,5 @@
 import React from "react";
-import { Processes } from "../types";
+import { LINKS, Processes } from "../types";
 import Biography from "../../components/processes/Biography";
 
 // const defaultMap = new Map<string, process>([
@@ -11,15 +11,15 @@ import Biography from "../../components/processes/Biography";
 
 export const processDirectory : Processes = {
     Biography : {
-        Component : () => <Biography />,
-        name : "Biography"
+        Component : ({id, name}) => <Biography id={id} name={name}/>,
+        name : LINKS.BIOGRAPHY
     },
-    test : {
-        Component : () => <Biography />,
-        name : "test"
+    MSPaint : {
+        Component : ({id, name}) => <Biography id={id} name={name}/>,
+        name : LINKS.PAINT
     },
-    testing : {
-        Component : () => <Biography />,
-        name : "testing"
+    Photo : {
+        Component : ({id, name}) => <Biography id={id} name={name}/>,
+        name : LINKS.PHOTOS
     }
 }

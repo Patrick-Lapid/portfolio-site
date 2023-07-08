@@ -1,15 +1,12 @@
 import React, { FC } from 'react';
 import Window from '../Window';
 import profilePic from "../../imgs/profile_picture.png";
+import { ComponentProcessProps } from '../../context/types';
 
-type Props = {
-    id : string,
-    name : string
-}
+const Biography: FC<ComponentProcessProps> = ({ id, name }) => {
 
-const Biography : FC = (props: Props) => {
     return (
-        <Window id={props.id} name={props.name}>
+        <Window id={id} name={name}>
             <div className="content">
                 <div className="profile-col col-2">
                     <div className="profile-card d-flex flex-column align-items-center">

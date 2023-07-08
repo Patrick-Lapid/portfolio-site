@@ -9,7 +9,7 @@ const WindowManager = () => {
         <>
             {Object.entries(processes).map(([id, { Component, name }]) => {
                 return (
-                    <Component id={id} name={name} />
+                    <Component key={id} id={id} name={name} />
                 );
             })}
         </>

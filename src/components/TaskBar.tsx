@@ -19,7 +19,6 @@ const TaskBar = () => {
     }, []);
 
     const startup = () => {
-        console.log(audio.currentTime);
         if(!audio.currentTime){
             audio.play();
         }
