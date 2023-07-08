@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../styles/TaskBar.css";
-import { useProcessContext } from "../context/process";
+import { useProcessContext } from "../context/processes";
 import start from "../imgs/win95.png";
 import startupSound from "../imgs/startup.mp3";
-import { LINKS } from "../context/process";
+import { LINKS } from "../context/types";
 
 const TaskBar = () => {
-    const { processMap, focusedWindow, setFocusedWindow } =
+    const { processes, focusedWindow, setFocusedWindow } =
         useProcessContext();
     const [clockState, setClockState] = useState<any>();
     const audio = new Audio(startupSound)
@@ -27,8 +27,8 @@ const TaskBar = () => {
 
     useEffect(() => {
         // console.log(processMap)
-        Object.keys(processMap).map((key : string) =>  console.log(key, processMap.get(key)));
-    }, [])
+        Object.keys(processes).map((key : string) =>  console.log(key));
+    }, [processes])
 
     
 
@@ -50,20 +50,20 @@ const TaskBar = () => {
                     <div className="start-text">Start</div>
                 </div>
 
-                {[...processMap].map(([key, process]) => {
+                {Object.entries(processes).map(([key, {name}]) => {
                     return (
                         <button
                             key={key}
                             className={`navbar-item ${
-                                focusedWindow === process.name
+                                focusedWindow === name
                                     ? "navbar-item-depressed"
                                     : ""
                             }`}
                             onClick={() => {
-                                setFocusedWindow(process.name);
+                                setFocusedWindow(name);
                             }}
                         >
-                            {process.name}
+                            {name}
                         </button>
                     );
                 })}

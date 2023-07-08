@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import "../styles/WebBrowser.css";
 import { Rnd } from "react-rnd";
-import { useProcessContext } from "../context/process";
+import { useProcessContext } from "../context/processes";
 
 interface WindowProps {
     id : string,
@@ -10,7 +10,7 @@ interface WindowProps {
 
 const Window = (props : WindowProps) => {
 
-    const {processMap} = useProcessContext();
+    const {processes} = useProcessContext();
 
     return (
         <>
@@ -31,7 +31,7 @@ const Window = (props : WindowProps) => {
                         <div
                             className="header d-flex flex-row align-content-center justify-content-between"
                         >
-                            {processMap.get(props.id).name}
+                            {/* {processes.get(props.id).name} */}
                             <div className="header-buttons">
                                 <button></button>
                                 <button></button>

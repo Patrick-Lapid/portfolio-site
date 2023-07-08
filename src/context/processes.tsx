@@ -1,32 +1,20 @@
 import React, { useCallback, useContext, useState } from "react";
+import { processDirectory } from "./utils/processDirectory";
+import { LINKS, Processes } from "./types";
 
-export const LINKS = {
-    START     : "Start",
-    BIOGRAPHY : "Biography",
-    PHOTOS    : "Photos",
-    RESUME    : "Resume",
-    PAINT     : "Microsoft Paint"
-}
-
-export interface process {
-    name : string;
-    minimized : boolean;
-    maximized : boolean;
-}
 
 type ProcessContextInterface = {
-    processMap : Map<string, any>;
+    processes : Processes;
     focusedWindow : string;
     setFocusedWindow : any;
 }
 
-const defaultMap = new Map<string, process>([
-    ["biography", {name : LINKS.BIOGRAPHY, minimized: false, maximized: false}],
-    ["photo", {name : LINKS.PHOTOS, minimized: false, maximized: false}],
-    ["resume", {name : LINKS.RESUME, minimized: false, maximized: false}],
-    ["paint", {name : LINKS.PAINT, minimized: false, maximized: false}],
-
-])
+// const defaultMap = new Map<string, process>([
+//     ["biography", {name : LINKS.BIOGRAPHY, minimized: false, maximized: false}],
+//     ["photo", {name : LINKS.PHOTOS, minimized: false, maximized: false}],
+//     ["resume", {name : LINKS.RESUME, minimized: false, maximized: false}],
+//     ["paint", {name : LINKS.PAINT, minimized: false, maximized: false}],
+// ])
 
 type ProcessContextType = ProcessContextInterface;
 const ProcessContext = React.createContext<ProcessContextType>({} as ProcessContextInterface);
@@ -37,7 +25,7 @@ export function useProcessContext() {
 
 const NavigationProvider = ({children} : any) => {
 
-    const [processMap, updateProcessMap] = useState<Map<string, process>>(defaultMap); // eslint-disable-line no-unused-vars
+    const [processMap] = useState<Processes>(processDirectory); 
     const [focusedWindow, setFocusedWindow] = useState<string>(LINKS.BIOGRAPHY);
 
     const updateActiveWindow = useCallback(
@@ -47,7 +35,7 @@ const NavigationProvider = ({children} : any) => {
     )
 
     const value : ProcessContextInterface = {
-        processMap : processMap,
+        processes : processMap,
         focusedWindow : focusedWindow,
         setFocusedWindow : updateActiveWindow
     }
