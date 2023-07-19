@@ -23,10 +23,6 @@ const TaskBar = () => {
         }
     };
 
-    useEffect(() => {
-        Object.keys(processes).map((key: string) => console.log(key));
-    }, [processes]);
-
     return (
         <>
             <div className="navbar-container">
