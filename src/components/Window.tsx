@@ -1,7 +1,13 @@
 import React, { ReactNode } from "react";
-import "../styles/WebBrowser.css";
+import "../styles/Window.css";
 import { Rnd } from "react-rnd";
 import { useProcessContext } from "../context/processes";
+import { useThemeContext } from "../context/theme";
+import {
+    StyledAddress,
+    StyledHeader,
+    StyledWindow,
+} from "../styles/styledComponents";
 
 interface WindowProps {
     id: string;
@@ -12,6 +18,8 @@ interface WindowProps {
 const Window = (props: WindowProps) => {
 
     const { maximize, minimize } = useProcessContext()
+
+    const { theme } = useThemeContext();
 
     return (
         <>
@@ -28,20 +36,26 @@ const Window = (props: WindowProps) => {
                 style={{ overflow: "hidden" }}
             >
                 {/* Draggable Window */}
-                <div className="window">
+                <StyledWindow theme={theme}>
                     <div className="inner">
                         {/* Draggable Header */}
-                        <div className="header d-flex flex-row align-content-center justify-content-between">
+                        {/* <div className="header d-flex flex-row align-content-center justify-content-between"> */}
+                        <StyledHeader
+                            className="header"
+                            theme={theme}
+                        >
                             {props.name}
                             <div className="header-buttons">
                                 <button onClick={() => minimize(props.id)}></button>
                                 <button onClick={() => maximize(props.id)}></button>
                                 <button></button>
                             </div>
-                        </div>
+                        </StyledHeader>
+                        {/* </div> */}
 
                         {/* AddressBar */}
-                        <div className="top-section d-flex flex-row align-content-center">
+                        {/* <div className="top-section d-flex flex-row align-content-center"> */}
+                        <StyledAddress theme={theme}>
                             <div className="address-text mx-1 my-auto">
                                 Address
                             </div>
@@ -50,12 +64,13 @@ const Window = (props: WindowProps) => {
                                     localhost:8000/{props.id}
                                 </div>
                             </div>
-                        </div>
+                        </StyledAddress>
+                        {/* </div> */}
 
                         {/* render children */}
                         {props.children}
                     </div>
-                </div>
+                </StyledWindow>
             </Rnd>
         </>
     );

@@ -31,3 +31,19 @@ export const LINKS = {
     RESUME: "Resume",
     PAINT: "Microsoft Paint",
 };
+
+export type Theme = {
+    primaryColor: string;
+    tlWindowOuter: string;
+    rbWindowOuter: string;
+    tlWindowInner: string;
+    rbWindowInner: string;
+
+    gradient1: string;
+    gradient2: string;
+
+    tlContentOuter: string;
+    rbContentOuter: string;
+    tlContentInner: string;
+    rbContentInner: string;
+};
