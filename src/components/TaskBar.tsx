@@ -54,12 +54,12 @@ const TaskBar = () => {
                         <button
                             key={key}
                             className={`navbar-item ${
-                                focusedWindow === name
+                                focusedWindow === key
                                     ? "navbar-item-depressed"
                                     : ""
                             }`}
                             onClick={() => {
-                                setFocusedWindow(name);
+                                setFocusedWindow(key);
                             }}
                         >
                             {name}

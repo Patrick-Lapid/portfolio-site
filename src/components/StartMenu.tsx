@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useProcessContext } from "../context/processes";
 import sidebar from "../imgs/sidebar-image.png";
 import linkedin from "../imgs/Linkedin.webp";
 import instagram from "../imgs/Instagram.webp";

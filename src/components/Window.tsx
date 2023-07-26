@@ -17,7 +17,7 @@ interface WindowProps {
 
 const Window = (props: WindowProps) => {
 
-    const { maximize, minimize } = useProcessContext()
+    const { maximize, minimize, close } = useProcessContext()
 
     const { theme } = useThemeContext();
 
@@ -48,7 +48,7 @@ const Window = (props: WindowProps) => {
                             <div className="header-buttons">
                                 <button onClick={() => minimize(props.id)}></button>
                                 <button onClick={() => maximize(props.id)}></button>
-                                <button></button>
+                                <button onClick={() => close(props.id)}></button>
                             </div>
                         </StyledHeader>
                         {/* </div> */}

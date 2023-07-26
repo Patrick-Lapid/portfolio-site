@@ -15,8 +15,8 @@ const ProcessContextProvider = ({ children }: any) => {
     const [processes, setProcesses] = useState<Processes>(processDirectory);
     const [focusedWindow, setFocusedWindow] = useState<string>(LINKS.BIOGRAPHY);
 
-    const updateActiveWindow = useCallback((id: string) => {
-        setFocusedWindow(id);
+    const updateActiveWindow = useCallback((processId: string) => {
+        setFocusedWindow(processId);
     }, []);
 
     const setProcessSettings = useCallback((processId: string, settings: Partial<Process>) => {
@@ -41,11 +41,13 @@ const ProcessContextProvider = ({ children }: any) => {
             maximized: !processes[processId].maximized
         });
 
+        updateActiveWindow(processId)
 
-    }, [processes, setProcessSettings]);
+
+    }, [processes, setProcessSettings, updateActiveWindow]);
 
     const minimize = useCallback((processId : string) => {
-        console.log("Closed : ", processId)
+        console.log("Minimized : ", processId)
 
         setProcessSettings(processId, {
             minimized: !processes[processId].minimized
@@ -53,12 +55,21 @@ const ProcessContextProvider = ({ children }: any) => {
 
     }, [processes, setProcessSettings]);
 
+    const close = useCallback((processID: string) => {
+        console.log("Closed: ", processID)
+
+        const {[processID]: _closedProcess, ...remainingProcesses} = processes;
+        setProcesses(remainingProcesses);
+        
+    }, [processes]);
+
     const value: ProcessContextInterface = {
         processes: processes,
         focusedWindow: focusedWindow,
         setFocusedWindow: updateActiveWindow,
         maximize : maximize,
-        minimize : minimize
+        minimize : minimize,
+        close    : close,
     };
 
     return (

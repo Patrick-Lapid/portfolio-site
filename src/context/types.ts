@@ -4,8 +4,9 @@ export type ProcessContextInterface = {
     processes: Processes;
     focusedWindow: string;
     setFocusedWindow: any;
-    maximize : any
-    minimize : any
+    maximize : any;
+    minimize : any;
+    close    : any;
 };
 
 export type ComponentProcessProps = {
