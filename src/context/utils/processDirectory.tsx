@@ -5,13 +5,6 @@ import MSPaint from "../../components/processes/MSPaint";
 import Photos from "../../components/processes/Photos";
 import Resume from "../../components/processes/Resume";
 
-// const defaultMap = new Map<string, process>([
-//     ["biography", {name : LINKS.BIOGRAPHY, minimized: false, maximized: false}],
-//     ["photo", {name : LINKS.PHOTOS, minimized: false, maximized: false}],
-//     ["resume", {name : LINKS.RESUME, minimized: false, maximized: false}],
-//     ["paint", {name : LINKS.PAINT, minimized: false, maximized: false}],
-// ])
-
 export const processDirectory: Processes = {
     Biography: {
         Component: ({ id, name }) => (
@@ -21,6 +14,8 @@ export const processDirectory: Processes = {
             />
         ),
         name: LINKS.BIOGRAPHY,
+        maximized : false,
+        minimized : false,
     },
     MSPaint: {
         Component: ({ id, name }) => (
@@ -30,6 +25,8 @@ export const processDirectory: Processes = {
             />
         ),
         name: LINKS.PAINT,
+        maximized : false,
+        minimized : false,
     },
     Photo: {
         Component: ({ id, name }) => (
@@ -39,6 +36,8 @@ export const processDirectory: Processes = {
             />
         ),
         name: LINKS.PHOTOS,
+        maximized : false,
+        minimized : false,
     },
     Resume: {
         Component: ({ id, name }) => (
@@ -48,5 +47,7 @@ export const processDirectory: Processes = {
             />
         ),
         name: LINKS.RESUME,
+        maximized : false,
+        minimized : false,
     },
 };

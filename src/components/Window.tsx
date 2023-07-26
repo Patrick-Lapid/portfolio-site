@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import "../styles/WebBrowser.css";
 import { Rnd } from "react-rnd";
+import { useProcessContext } from "../context/processes";
 
 interface WindowProps {
     id: string;
@@ -9,6 +10,9 @@ interface WindowProps {
 }
 
 const Window = (props: WindowProps) => {
+
+    const { maximize, minimize } = useProcessContext()
+
     return (
         <>
             <Rnd
@@ -30,8 +34,8 @@ const Window = (props: WindowProps) => {
                         <div className="header d-flex flex-row align-content-center justify-content-between">
                             {props.name}
                             <div className="header-buttons">
-                                <button></button>
-                                <button></button>
+                                <button onClick={() => minimize(props.id)}></button>
+                                <button onClick={() => maximize(props.id)}></button>
                                 <button></button>
                             </div>
                         </div>

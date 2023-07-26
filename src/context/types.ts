@@ -1,5 +1,13 @@
 import { ComponentType } from "react";
 
+export type ProcessContextInterface = {
+    processes: Processes;
+    focusedWindow: string;
+    setFocusedWindow: any;
+    maximize : any
+    minimize : any
+};
+
 export type ComponentProcessProps = {
     id: string;
     name: string;
@@ -8,6 +16,8 @@ export type ComponentProcessProps = {
 export type Process = {
     Component: ComponentType<ComponentProcessProps>;
     name: string;
+    maximized : boolean;
+    minimized : boolean;
 };
 
 export type Processes = {
