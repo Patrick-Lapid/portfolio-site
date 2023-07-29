@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import "../styles/Window.css";
 import { Rnd } from "react-rnd";
 import { useProcessContext } from "../context/processes";
@@ -15,25 +15,49 @@ interface WindowProps {
     children: ReactNode;
 }
 
-const Window = (props: WindowProps) => {
+interface Size {
+    height: string;
+    width: string;
+}
 
-    const { maximize, minimize, close } = useProcessContext()
+const Window = (props: WindowProps) => {
+    const [{ height, width }, setSize] = useState<Size>({
+        height: "600px",
+        width: "850px",
+    });
+
+    const { maximize, minimize, close } = useProcessContext();
+
+    const {
+        processes: {
+            [props.id]: { maximized, minimized },
+        },
+    } = useProcessContext();
 
     const { theme } = useThemeContext();
 
     return (
         <>
             <Rnd
-                size={{ width: 850, height: 600 }}
+                size={{ width: width, height: height }}
                 minHeight={600}
                 minWidth={850}
-                position={{
-                    x: Math.floor(Math.random() * 500 + 1),
-                    y: Math.floor(Math.random() * 200 + 1),
+                enableResizing={!maximized}
+                onResizeStop={(
+                    _event,
+                    _direction,
+                    { style: { height: elementHeight, width: elementWidth } },
+                ) => {
+                    setSize({ height: elementHeight, width: elementWidth });
                 }}
+                // position={{
+                //     x: Math.floor(Math.random() * 500 + 1),
+                //     y: Math.floor(Math.random() * 200 + 1),
+                // }}
                 dragHandleClassName="header"
                 cancel=".header-buttons"
-                style={{ overflow: "hidden" }}
+
+                // style={{ overflow: "hidden" }}
             >
                 {/* Draggable Window */}
                 <StyledWindow theme={theme}>
@@ -46,9 +70,15 @@ const Window = (props: WindowProps) => {
                         >
                             {props.name}
                             <div className="header-buttons">
-                                <button onClick={() => minimize(props.id)}></button>
-                                <button onClick={() => maximize(props.id)}></button>
-                                <button onClick={() => close(props.id)}></button>
+                                <button
+                                    onClick={() => minimize(props.id)}
+                                ></button>
+                                <button
+                                    onClick={() => maximize(props.id)}
+                                ></button>
+                                <button
+                                    onClick={() => close(props.id)}
+                                ></button>
                             </div>
                         </StyledHeader>
                         {/* </div> */}
