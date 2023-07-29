@@ -45,11 +45,11 @@ const ProcessContextProvider = ({ children }: any) => {
         (processId: string) => {
             console.log("Maximized", processId);
 
+            updateActiveWindow(processId);
+
             setProcessSettings(processId, {
                 maximized: !processes[processId].maximized,
             });
-
-            updateActiveWindow(processId);
         },
         [processes, setProcessSettings, updateActiveWindow],
     );

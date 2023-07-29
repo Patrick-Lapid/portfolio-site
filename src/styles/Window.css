@@ -168,6 +168,8 @@
     width: 100%;
 }
 
+
+
 @media (max-width: 576px) {
     .profile-col {
         padding: 0;
