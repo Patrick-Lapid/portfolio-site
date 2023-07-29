@@ -6,7 +6,7 @@
     font-weight: normal;
 }
 * {
-    cursor: url("./imgs/curson.png"), auto;
+    cursor: url("./imgs/cursors/arrow.cur"), auto;
     overflow: hidden;
 }
 

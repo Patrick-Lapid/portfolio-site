@@ -42,6 +42,7 @@ const Window = (props: WindowProps) => {
                 size={{ width: width, height: height }}
                 minHeight={600}
                 minWidth={850}
+                style={{ display: minimized ? "none" : "" }}
                 enableResizing={!maximized}
                 onResizeStop={(
                     _event,
